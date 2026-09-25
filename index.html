@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Expense Tracker</h1>
+      <div id="balance-display">$0.00</div>
+    </header>
+
+    <main class="app-grid">
+      <!-- Left column (≥768 px) -->
+      <section class="col-left">
+        <form id="transaction-form">
+          <label for="item-name">Item Name</label>
+          <input id="item-name" type="text" placeholder="e.g. Lunch" maxlength="100" />
+          <span id="err-name" class="error"></span>
+
+          <label for="item-amount">Amount</label>
+          <input id="item-amount" type="number" placeholder="0.00" min="0.01" max="999999999.99" step="0.01" />
+          <span id="err-amount" class="error"></span>
+
+          <label for="item-cat">Category</label>
+          <select id="item-cat">
+            <option value="">-- Select Category --</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Fun">Fun</option>
+          </select>
+          <span id="err-cat" class="error"></span>
+
+          <button type="submit">Add Transaction</button>
+          <p id="err-storage" class="error hidden"></p>
+        </form>
+      </section>
+
+      <!-- Right column (≥768 px) -->
+      <section class="col-right">
+        <div id="transaction-list-wrapper">
+          <ul id="transaction-list"></ul>
+          <p id="empty-state" class="hidden">No transactions yet.</p>
+          <p id="err-load" class="hidden">Could not load transaction history.</p>
+        </div>
+        <div id="chart-wrapper">
+          <canvas id="spending-chart"></canvas>
+          <p id="chart-placeholder" class="hidden">No spending data available.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

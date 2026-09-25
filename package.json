@@ -1,0 +1,16 @@
+{
+  "name": "expense-budget-visualizer",
+  "version": "1.0.0",
+  "description": "Expense and Budget Visualizer — client-side SPA",
+  "main": "js/app.js",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/property-tests.mjs"
+  },
+  "devDependencies": {
+    "fast-check": "^3.22.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
